@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10131d">
+  <meta name="description" content="A photo album and birthday wishes for Prianka.">
+  <title>Happy Birthday, Prianka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Hind+Siliguri:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="intro-locked">
+  <div id="page-progress" aria-hidden="true"></div>
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- A cinematic airplane draws a heart before the page opens. -->
+  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+    <div class="intro-stars" aria-hidden="true"></div>
+    <div class="intro-topline">A BIRTHDAY ALBUM &nbsp;✦&nbsp; FOR PRIANKA</div>
+    <div class="intro-center">
+      <div class="intro-orbit" aria-hidden="true">
+        <svg id="flight-svg" viewBox="0 0 900 620" role="img" aria-label="An airplane drawing a heart across the sky">
+          <defs><linearGradient id="contrail" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff4ec"/><stop offset="1" stop-color="#eeb5d0"/></linearGradient></defs>
+          <path id="flight-guide" d="M450,485 C408,455 238,339 265,239 C288,136 404,155 450,242 C502,155 618,136 641,239 C673,340 493,460 450,485" fill="none" stroke="none"/>
+          <path id="flight-draw" d="M450,485 C408,455 238,339 265,239 C288,136 404,155 450,242 C502,155 618,136 641,239 C673,340 493,460 450,485" fill="none" stroke="url(#contrail)" stroke-width="7" stroke-linecap="round" stroke-dasharray="1400" stroke-dashoffset="1400"/>
+          <g id="airplane" transform="translate(450 485)"><path d="M-19 2 13-12 7-1 23 3 7 8 11 19 -2 10 -10 12 -6 6Z" fill="#fff3ed"/><path d="M-19 2 13-12 7-1 23 3 7 8 11 19 -2 10 -10 12 -6 6Z" fill="none" stroke="#d0a2c0" stroke-width="1.3"/></g>
+        </svg>
+        <span class="orbit-star star-a">✦</span><span class="orbit-star star-b">✧</span><span class="orbit-star star-c">✦</span>
+      </div>
+      <div class="intro-copy" id="intro-copy">
+        <div class="eyebrow eyebrow-light">LET THE CELEBRATION BEGIN</div>
+        <h1 id="intro-title">Happy birthday,<br><em>Prianka!</em></h1>
+        <p>Gather around for a few photos, a birthday card,<br>and a cake for Prianka.</p>
+        <button class="button button-blush" id="open-surprise" type="button"><span>Open the birthday album</span><span aria-hidden="true">✧</span></button>
+        <p class="intro-hint">Your soundtrack is on by default. Best with headphones. ♫</p><button type="button" class="intro-audio-toggle" id="intro-audio-toggle" aria-pressed="true" aria-label="Turn birthday music off">♫ Music on · tap to mute</button>
+      </div>
+      <div class="intro-birthday" id="intro-birthday" aria-hidden="true"><span>the sky has a message for you...</span><strong>Happy Birthday, Prianka ♡</strong></div>
+    </div>
+    <button class="intro-skip" id="skip-intro" type="button">Skip intro <span aria-hidden="true">↗</span></button>
+  </div>
+
+  <header class="site-header" id="site-header">
+    <a href="#top" class="brand" aria-label="Birthday album, back to top">birthday <span>album.</span><i>♡</i></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#memories">Photos</a><a href="#tree">Wish tree</a><a href="#letter">A letter</a><a href="#birthday">Your birthday</a>
+    </nav>
+    <div class="nav-actions"><div class="audio-controls"><button class="sound-toggle" type="button" id="sound-toggle" aria-pressed="true" aria-label="Turn music and sound effects off"><span class="sound-icon" aria-hidden="true">♫</span><span id="sound-label">Music on</span></button><details class="audio-settings" id="audio-settings"><summary aria-label="Music volume and settings" title="Music volume"><span aria-hidden="true">☷</span></summary><div class="audio-settings-panel"><label for="music-volume">Volume <span id="volume-value">50%</span></label><input id="music-volume" type="range" min="0" max="100" value="50" step="5" aria-label="Music and sound effects volume"><p id="now-playing" aria-live="polite">Music is on. Starts at your first tap if autoplay is blocked. ♡</p><p class="audio-credit">Birthday music for the album.</p></div></details></div><a class="nav-gift" href="#birthday">Your gift <span aria-hidden="true">↗</span></a></div>
+  </header>
+
+  <main id="top">
+    <section class="hero section-dark" aria-labelledby="hero-title">
+      <div class="hero-stars" aria-hidden="true"></div>
+      <div class="hero-gradient" aria-hidden="true"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow eyebrow-light"><span class="line"></span> A BIRTHDAY KEEPSAKE</p>
+        <h1 id="hero-title">Today we<br>celebrate<br><em>Prianka.</em></h1>
+        <p class="hero-script" lang="bn">শুভ <span>জন্মদিন!</span></p>
+        <p class="hero-body">Five photographs and a birthday card to open with family and friends.</p>
+        <a class="button button-cream" href="#memories">Turn the page <span aria-hidden="true">↗</span></a>
+        <div class="hero-signature">Birthday wishes from <span>Sadat</span></div>
+      </div>
+      <div class="hero-art reveal" aria-label="A portrait of Prianka">
+        <div class="hero-aura"></div>
+        <div class="hero-frame"><img src="assets/photos/portrait-pink.webp" alt="Prianka in pink, seated on a sofa" fetchpriority="high" decoding="async" width="960" height="1280"><div class="hero-photo-overlay"></div></div>
+        <div class="hero-stamp stamp-top"><span>TODAY</span><strong>✦</strong><small>time to celebrate</small></div>
+        <div class="hero-stamp stamp-bottom"><span>a little</span><strong>BIRTHDAY</strong><small>keepsake</small></div>
+        <span class="hero-doodle doodle-one" aria-hidden="true">✧</span><span class="hero-doodle doodle-two" aria-hidden="true">♡</span>
+      </div>
+      <div class="scroll-indicator"><span>SCROLL TO BEGIN</span><i></i></div>
+      <div class="hero-backdrop-text" aria-hidden="true">BIRTHDAY</div>
+    </section>
+
+    <section class="intro-note section-cream" id="memories" aria-labelledby="note-title">
+      <div class="section-heading reveal"><p class="eyebrow">CHAPTER ONE <span>✦</span> THE BEAUTIFUL BEGINNING</p><h2 id="note-title">A page from<br><em>the album.</em></h2><p>A splash of yellow and an afternoon outdoors to start the album.</p></div>
+      <div class="note-layout">
+        <div class="note-photos reveal"><div class="note-photo-large"><img src="assets/photos/portrait-yellow.webp" loading="lazy" alt="Prianka in yellow beneath an arch"></div><div class="note-photo-small"><img src="assets/photos/IMG_6565.JPG" loading="lazy" alt="Prianka at a picnic table"></div><div class="note-tape" aria-hidden="true"></div><span class="note-image-caption">a sunny shade of yellow</span></div>
+        <div class="note-copy reveal"><span class="tiny-heart">♡</span><p class="big-quote">“May this year bring <em>plenty</em> of reasons to smile.”</p><p lang="bn">এই অ্যালবামটা তোমার জন্মদিনের জন্য সাজানো। সবাই মিলে ছবিগুলো দেখতে দেখতে কেক কাটার সময় হয়ে যাবে।</p><span class="note-signoff">শুভ জন্মদিন, প্রিয়াঙ্কা।</span><div class="note-corner">01 / 06</div></div>
+      </div>
+    </section>
+
+    <section class="gallery section-cream" aria-labelledby="gallery-title">
+      <div class="gallery-head reveal"><div><p class="eyebrow">PRIANKA’S PHOTO ALBUM</p><h2 id="gallery-title">Five photos.<br><em>One birthday.</em></h2></div><p>A picnic table, a lakeside railing, a wall of yellow flowers. Tap a picture to see it up close.</p></div>
+      <div class="photo-tape" aria-label="Prianka’s birthday photos">
+        <figure class="photo-card card-tilt-left"><img src="assets/photos/IMG_6565.JPG" loading="lazy" alt="Prianka seated outdoors at a picnic table"><figcaption>a seat in the garden <span>♡</span></figcaption></figure>
+        <figure class="photo-card card-tilt-right"><img src="assets/photos/IMG_6566.JPG" loading="lazy" alt="Prianka in a sari beside yellow flowers"><figcaption>beside the yellow flowers <span>✧</span></figcaption></figure>
+        <figure class="photo-card card-tilt-left"><img src="assets/photos/portrait-lakeside.webp" loading="lazy" alt="Prianka beside the lakeside railing"><figcaption>by the lakeside railing <span>♡</span></figcaption></figure>
+        <figure class="photo-card card-tilt-right"><img src="assets/photos/portrait-yellow.webp" loading="lazy" alt="Prianka in yellow beneath an arch"><figcaption>a portrait in yellow <span>✧</span></figcaption></figure>
+      </div>
+      <div class="gallery-epilogue reveal"><span class="gallery-flourish">✦ &nbsp; ♡ &nbsp; ✦</span><p class="gallery-bottom">Prianka’s birthday album</p><button type="button" id="view-all-memories" class="button button-berry memory-collection-button">View all five photos <span aria-hidden="true">↗</span></button><span class="gallery-count-note">5 PHOTOS · BIRTHDAY EDITION</span></div>
+    </section>
+
+
+    <section class="memory-interlude section-dark" aria-labelledby="memory-interlude-title">
+      <div class="memory-interlude-veil" aria-hidden="true"></div>
+      <div class="memory-interlude-frame" aria-hidden="true"></div>
+      <div class="memory-interlude-content reveal"><p class="eyebrow eyebrow-light">BY THE LAKE &nbsp; ✦</p>
+        <span class="interlude-ornament" aria-hidden="true">❦</span>
+        <h2 id="memory-interlude-title">An afternoon<br><em>by the water.</em></h2>
+        <p lang="bn">লেকের ধারে তোলা এই ছবিটায় রেলিংয়ের ওপাশে সবুজ আর পানি দেখা যাচ্ছে।</p>
+        <div class="interlude-signature">From the <em>birthday album</em></div>
+      </div>
+      <div class="memory-interlude-photo reveal"><div class="interlude-photo-card"><img src="assets/photos/portrait-lakeside.webp" alt="Prianka in pink by the lake" loading="lazy" decoding="async"></div><span class="interlude-photo-note">a quiet afternoon by the lake</span></div>
+      <div class="memory-interlude-edge" aria-hidden="true">A PAGE FROM THE ALBUM</div>
+    </section>
+
+    <section class="love-tree-section section-rose" id="tree" aria-labelledby="tree-title">
+      <div class="tree-column-copy reveal"><p class="eyebrow">CHAPTER TWO <span>✦</span> THE WISH TREE</p><h2 id="tree-title">A tree full of<br><em>birthday wishes.</em></h2><p>Tap below to fill the branches with birthday wishes for Prianka.</p><p lang="bn" class="bn-subcopy">একেকটা পাতায় একেকটা শুভকামনা। বোতামে চাপ দিয়ে দেখো, গাছটা কীভাবে ভরে ওঠে।</p><div class="tree-action"><button id="grow-tree" type="button" class="button button-berry">Grow the wish tree <span aria-hidden="true">♡</span></button><span id="tree-status" role="status">Tap to see a little magic.</span></div><div class="tree-heart-notes" id="tree-heart-notes" aria-live="polite"><span>Good health.</span><span>New discoveries.</span><span>Happy days ahead.</span></div></div>
+      <div class="tree-scene reveal" id="tree-scene"><div class="tree-sky-dots" aria-hidden="true"></div><div class="tree-ground" aria-hidden="true"></div><svg class="tree-branches" viewBox="0 0 470 510" aria-hidden="true"><path d="M228 470 C219 400 228 315 231 229 M230 350 C202 298 165 292 143 270 M229 331 C263 284 302 271 318 244 M229 291 C215 265 203 245 197 210 M228 270 C248 239 257 226 268 208" stroke="#86544b" stroke-width="19" stroke-linecap="round" fill="none"/><path d="M228 470 C219 400 228 315 231 229 M230 350 C202 298 165 292 143 270 M229 331 C263 284 302 271 318 244 M229 291 C215 265 203 245 197 210 M228 270 C248 239 257 226 268 208" stroke="#ad7963" stroke-width="6" stroke-linecap="round" fill="none"/></svg><div class="heart-leaves" id="heart-leaves" aria-hidden="true"></div><div class="tree-float-heart" aria-hidden="true">♡</div><div class="tree-label"><span>birthday wishes</span><strong>for Prianka</strong></div></div>
+    </section>
+
+    <section class="little-note section-dark" aria-labelledby="little-title"><div class="little-note-orbit" aria-hidden="true">✶</div><div class="little-note-image reveal"><img src="assets/photos/IMG_6566.JPG" alt="Prianka beside a cluster of yellow flowers" loading="lazy"></div><div class="little-note-text reveal"><p class="eyebrow eyebrow-light">FROM THE PHOTO ALBUM</p><h2 id="little-title">A day among<br><em>the flowers.</em></h2><p>Look closely. The flowers almost match the colour of Prianka’s sari.</p><p lang="bn">হলুদ ফুলের পাশে দাঁড়িয়ে তোলা এই ছবিটা অ্যালবামের রঙিন পাতার জন্য।</p><span class="handwrite">A little sunshine</span></div></section>
+
+    <section class="letter-section section-cream" id="letter" aria-labelledby="letter-title"><div class="letter-glow"></div><div class="floating-hearts" id="floating-hearts" aria-hidden="true"></div><div class="letter-top reveal"><p class="eyebrow">CHAPTER THREE <span>✦</span> THE BIRTHDAY CARD</p><h2 id="letter-title">An envelope<br><em>for Prianka.</em></h2><p>Tap the envelope to read your birthday card.</p></div><div class="envelope-wrap reveal"><button class="envelope-button" id="open-letter" type="button" aria-expanded="false" aria-controls="letter-content" aria-label="Open the birthday card"><span class="envelope-envelope"><span class="envelope-back"></span><span class="envelope-paper">TO PRIANKA ♡</span><span class="envelope-front"></span><span class="envelope-flap"></span><span class="envelope-seal">♡</span></span></button><span class="envelope-hint">TAP THE ENVELOPE TO OPEN YOUR LETTER</span></div>
+      <article class="letter-paper" id="letter-content" hidden><button class="letter-close" id="close-letter" aria-label="Close the letter" type="button">✕</button><span class="letter-date">A LETTER FOR YOUR BIRTHDAY</span><div class="letter-rule">✧ &nbsp; ♡ &nbsp; ✧</div><h3>প্রিয় প্রিয়াঙ্কা,</h3>
+        <p lang="bn">শুভ জন্মদিন! আজ পরিবারের সবাইকে নিয়ে কেক কাটো, গল্প করো আর অনেক ছবি তোলো। পরের জন্মদিনে এই ছবিগুলো দেখতে বেশ মজা হবে।</p>
+        <p lang="bn">আল্লাহ তোমাকে সুস্থ ও সুখী রাখুন। নতুন বছরে নিজের পছন্দের কাজ করার সময় পাও, নতুন কিছু শেখো আর নিজের স্বপ্নগুলোর দিকে এগিয়ে যাও।</p>
+        <p class="letter-highlight">Wishing you a happy birthday and a wonderful year ahead.</p>
+        <div class="letter-signature">শুভকামনায়,<span>সাদাত</span></div>
+      </article>
+    </section>
+
+    <section class="future-section section-dark" id="future" aria-labelledby="future-title"><div class="future-photo"><img src="assets/photos/portrait-lakeside.webp" alt="A view of Prianka by the lake" loading="lazy"></div><div class="future-shade"></div><div class="future-content reveal"><p class="eyebrow eyebrow-light">CHAPTER FOUR <span>✦</span> THE YEAR AHEAD</p><h2 id="future-title">To the<br><em>year ahead.</em></h2><p lang="bn">আগামী বছরটা নতুন জায়গা দেখার, নতুন কিছু শেখার আর পরিবারের সবার সঙ্গে সুন্দর সময় কাটানোর সুযোগ নিয়ে আসুক।</p><span class="future-postscript">Here’s to new places and new things to learn.</span></div></section>
+
+    <section class="question-section section-rose" id="question" aria-labelledby="question-title"><div class="question-side reveal"><p class="eyebrow">CHAPTER FIVE <span>✦</span> ONE SMALL QUESTION</p><h2 id="question-title">Just one little<br><em>question…</em></h2><p>There’s one more birthday tradition to enjoy.</p><div class="question-scribble">♡ ♡ ♡</div></div><div class="question-card reveal" id="question-card"><div class="question-card-inner"><span class="question-icon">💌</span><p class="question-pre">PRIANKA…</p><h3>Ready to<br>light the<br><em>candle?</em></h3><div class="question-buttons"><button id="answer-yes" type="button" class="button button-berry">Let’s light it! ♡</button><button id="answer-no" type="button" class="button button-soft">One moment 🙈</button></div><div class="question-result" id="question-result" role="status" aria-live="polite" hidden><div class="question-result-heart">💗</div><strong>It’s cake time!</strong><p>Gather everyone around and make a wish.</p><a href="#birthday" class="button button-berry">Your surprise is waiting ↗</a></div></div></div></section>
+
+    <section class="cake-section section-dark" id="birthday" aria-labelledby="birthday-title"><div class="cake-sparkle sparkle-1" aria-hidden="true">✦</div><div class="cake-sparkle sparkle-2" aria-hidden="true">✧</div><div class="cake-sparkle sparkle-3" aria-hidden="true">✦</div><div class="cake-head reveal"><p class="eyebrow eyebrow-light">CHAPTER SIX <span>✦</span> THIS MOMENT IS YOURS</p><h2 id="birthday-title">Happy Birthday,<br><em>Prianka!</em></h2><p>Close your eyes and make a wish. May Allah bless you with good health and a happy year ahead.</p></div><div class="cake-wrap reveal" id="cake-wrap"><div class="cake-stars" aria-hidden="true"></div><div class="cake-illustration" role="img" aria-label="A pink two-layer birthday cake decorated with hearts and candles"><div class="cake-platter"></div><div class="cake-layer cake-lower"><div class="cake-ribbon"></div></div><div class="cake-layer cake-upper"><div class="cake-icing"></div><div class="cake-pearls"></div><div class="cake-heart h1">♥</div><div class="cake-heart h2">♥</div><div class="cake-heart h3">♥</div></div><div class="cake-candle"><div class="candle-stripes"></div><div class="wick"></div><div class="flame" id="candle-flame"></div><div class="smoke" id="candle-smoke">〰</div></div></div><div class="cake-controls"><span class="cake-prompt" id="cake-prompt">A birthday cake made just for you ♡</span><button id="cake-button" class="button button-blush" type="button">Light the candle <span aria-hidden="true">✧</span></button><button id="cake-replay" class="text-button" type="button" hidden>Light it again ↻</button></div></div><div id="cake-message" class="cake-message" aria-live="polite"><span>Wish made? Now, may it all come true. ♡</span></div></section>
+
+    <section class="finale section-dark" id="forever" aria-labelledby="finale-title"><canvas id="fireworks-canvas" aria-hidden="true"></canvas><div class="finale-content"><p class="eyebrow eyebrow-light reveal">THE LAST CHAPTER <span>✦</span> THE FIREWORKS</p><div class="finale-vow reveal"><span>for Prianka</span><strong>happy<br>birthday</strong><small>make a wish ✦</small></div><h2 id="finale-title" class="reveal">One last wish.<br>A sky full of stars.<br><em>Happy birthday!</em></h2><p class="finale-bn reveal" lang="bn">শুভ জন্মদিন, প্রিয়াঙ্কা। তোমার আগামী দিনগুলো আনন্দে কাটুক।</p><span class="finale-love reveal">Birthday wishes ♡ <small>— Sadat</small></span><div class="finale-actions reveal"><button id="replay-fireworks" class="button button-cream" type="button">Make the sky sparkle ✨</button><button id="start-again" class="text-button text-button-light" type="button">Open the album again ↺</button></div></div><div class="finale-bottom" aria-hidden="true">HAPPY BIRTHDAY, PRIANKA</div></section>
+  </main>
+  <footer class="site-footer"><span>Made by Sadat for Prianka’s birthday.</span><a href="#top">Back to the beginning ↑</a><span>Birthday album · 2026</span></footer>
+
+  <div id="memory-lightbox" class="memory-lightbox" hidden role="dialog" aria-modal="true" aria-labelledby="memory-lightbox-heading">
+    <div class="lightbox-ambient" aria-hidden="true"></div>
+    <div class="lightbox-topline"><span>PRIANKA’S PHOTO ALBUM &nbsp; ✦</span><button class="lightbox-close" id="memory-close" type="button" aria-label="Close photo viewer">Close <span aria-hidden="true">✕</span></button></div>
+    <div class="lightbox-stage"><button id="memory-prev" type="button" class="lightbox-arrow" aria-label="Previous photo">‹</button><figure class="lightbox-figure"><img id="memory-full-photo" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="><figcaption><span id="memory-lightbox-heading">Birthday portrait</span><small id="memory-index">01 / 5</small></figcaption></figure><button id="memory-next" type="button" class="lightbox-arrow" aria-label="Next photo">›</button></div>
+    <div class="lightbox-footnote">Five photographs from Prianka’s birthday album.</div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
